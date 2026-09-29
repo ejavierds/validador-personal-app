@@ -88,15 +88,21 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--glass-shadow);
-    background: white;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
     line-height: 0; /* elimina el espacio debajo de la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .banner-img {
     width: 100%;
     height: auto;
-    max-height: 140px;
-    object-fit: cover;
+    max-height: 160px;
+    object-fit: contain;
     display: block;
 }
 

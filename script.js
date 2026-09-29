@@ -1,5 +1,5 @@
 // ¡IMPORTANTE! REEMPLAZA ESTA URL CON LA URL DE TU APLICACIÓN WEB DE APPS SCRIPT PUBLICADA
-const SCRIPT_URL = 'https://script.google.com/macros/s/TU_ID_DE_DESPLIEGUE/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyRNclvY4nDVb03zJI4qGGSdndBNQ-NRQPhi0MxtW_dtgtpxnl7Ar3XSlGTOHIgbyO8/exec';
 
 document.getElementById('search-form').addEventListener('submit', async function(e) {
     e.preventDefault();
