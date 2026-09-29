@@ -66,7 +66,10 @@ function renderData(data) {
     
     document.getElementById('r-edad').textContent = data['EDAD'] ? `${data['EDAD']} años` : 'N/A';
     document.getElementById('r-profesion').textContent = formatValue(data['PROFESION']);
-    document.getElementById('r-estado').textContent = formatValue(data['ESTADO']);
+    document.getElementById('r-estado').textContent = "ACTIVA"; // Por regla general del sistema
+    
+    document.getElementById('r-region').textContent = formatValue(data['ESTADO']); // Estado geográfico
+    document.getElementById('r-municipio').textContent = formatValue(data['MUNICIPIO']);
     
     const centroSalud = formatValue(data['CENTRO DE SALUD']);
     document.getElementById('r-centro').textContent = centroSalud;
