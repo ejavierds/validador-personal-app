@@ -88,7 +88,25 @@ function renderData(data) {
     }
     document.getElementById('r-ingreso').textContent = fechaIngreso;
     
-    document.getElementById('r-telefono').textContent = formatValue(data['TELEFONO']);
+    let telefono = formatValue(data['TELEFONO']);
+    // Asegurar que inicie con 0
+    if (telefono !== 'N/A' && !telefono.startsWith('0')) {
+        telefono = '0' + telefono;
+    }
+    const telElement = document.getElementById('r-telefono');
+    telElement.textContent = telefono;
+    
+    // Habilitar enlace de llamada
+    if (telefono !== 'N/A') {
+        const telClean = telefono.replace(/\D/g, ''); // Quita espacios, guiones, etc.
+        telElement.href = `tel:${telClean}`;
+        telElement.style.pointerEvents = 'auto';
+    } else {
+        telElement.removeAttribute('href');
+        telElement.style.pointerEvents = 'none';
+        telElement.style.textDecoration = 'none';
+        telElement.style.color = 'inherit';
+    }
     document.getElementById('r-discapacidad').textContent = formatValue(data['¿CON ALGUNA DISCAPACIDAD?']);
 
     // Certificado Institucional Dinámico

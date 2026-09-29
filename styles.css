@@ -503,3 +503,12 @@ body {
     margin-top: 6px;
     font-style: italic;
 }
+
+.phone-link {
+    color: #047857;
+    text-decoration: none;
+    font-weight: 600;
+}
+.phone-link:hover {
+    text-decoration: underline;
+}
