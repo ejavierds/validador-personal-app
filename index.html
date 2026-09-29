@@ -87,6 +87,45 @@
                 </div>
             </div>
         </main>
+        <!-- Footer Institucional -->
+        <footer class="app-footer">
+            <p>Diseñado y desarrollado por <a href="https://ejavierds.vercel.app" target="_blank" rel="noopener noreferrer">ejavierds</a>.</p>
+            <p>Todos los derechos reservados 2026.</p>
+            <div class="footer-links">
+                <button type="button" class="link-btn" onclick="openModal('terms-modal')">Términos de Uso</button>
+                <span>|</span>
+                <button type="button" class="link-btn" onclick="openModal('privacy-modal')">Política de Privacidad</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modals para Políticas -->
+    <!-- Modal Términos -->
+    <div id="terms-modal" class="modal-overlay hidden" onclick="closeModal(event, 'terms-modal')">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModalDirect('terms-modal')">&times;</span>
+            <h2>Términos de Uso</h2>
+            <div class="modal-body">
+                <p>Bienvenido al Sistema de Validación de Personal del Municipio Jiménez.</p>
+                <p>1. <strong>Uso del Sistema:</strong> Este sistema es de uso exclusivo para la verificación de identidad del personal adscrito al Municipio Jiménez y sus dependencias de salud.</p>
+                <p>2. <strong>Veracidad:</strong> La información arrojada por este sistema es de carácter informativo e institucional, respaldada por la base de datos oficial de recursos humanos.</p>
+                <p>3. <strong>Restricciones:</strong> Queda estrictamente prohibido el uso de este sistema para fines comerciales, extracción masiva de datos o cualquier actividad ilícita.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Privacidad -->
+    <div id="privacy-modal" class="modal-overlay hidden" onclick="closeModal(event, 'privacy-modal')">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModalDirect('privacy-modal')">&times;</span>
+            <h2>Política de Privacidad</h2>
+            <div class="modal-body">
+                <p>El Municipio Jiménez se compromete a proteger la privacidad del personal.</p>
+                <p>1. <strong>Datos Personales:</strong> Los datos mostrados (nombres, cédula, cargo, edad, etc.) son estrictamente los necesarios para la validación de la relación laboral o institucional.</p>
+                <p>2. <strong>Seguridad:</strong> El sistema no almacena las búsquedas ni la información de los usuarios que realizan las consultas. Toda la información es transmitida de forma segura.</p>
+                <p>3. <strong>Consentimiento:</strong> Al utilizar esta plataforma, usted acepta el manejo de datos exclusivamente para fines de verificación de identidad institucional.</p>
+            </div>
+        </div>
     </div>
     
     <script src="script.js"></script>

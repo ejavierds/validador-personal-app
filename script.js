@@ -127,3 +127,19 @@ function renderFallbackAvatar(data, container) {
     container.textContent = emoji;
     container.classList.remove('hidden');
 }
+
+// Modal Logic
+function openModal(modalId) {
+    document.getElementById(modalId).classList.remove("hidden");
+}
+
+function closeModalDirect(modalId) {
+    document.getElementById(modalId).classList.add("hidden");
+}
+
+function closeModal(event, modalId) {
+    if (event.target.id === modalId) {
+        closeModalDirect(modalId);
+    }
+}
+
