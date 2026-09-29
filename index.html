@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Personal - Municipio Jiménez</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fondo decorativo tipo Glassmorphism -->
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <div class="container">
+        <!-- Banner Superior -->
+        <header class="header-card">
+            <img src="https://drive.google.com/uc?export=view&id=1Zs4CdUSK0jHAgyTHx6N0DTqBVaCUehlS" alt="Banner Institucional Municipio Jiménez" class="banner-img">
+        </header>
+
+        <!-- Panel Principal -->
+        <main class="glass-panel">
+            <div class="panel-header">
+                <h1 class="title">Verificación de Personal</h1>
+                <p class="subtitle">Ingrese el número de cédula para consultar</p>
+            </div>
+            
+            <form id="search-form" class="search-form">
+                <div class="input-group">
+                    <input type="text" id="cedula" name="cedula" placeholder="Ej. 12345678" required autocomplete="off" pattern="[A-Za-z0-9-]+" />
+                    <button type="submit" id="search-btn">
+                        <span id="btn-text">Consultar</span>
+                        <div id="btn-spinner" class="spinner hidden"></div>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Mensajes de Error -->
+            <div id="error-message" class="message error hidden"></div>
+
+            <!-- Ficha Interactiva de Resultados -->
+            <div id="result-card" class="result-card hidden">
+                <div class="profile-header">
+                    <div class="avatar-container">
+                        <!-- Skeleton Loader -->
+                        <div id="avatar-skeleton" class="skeleton skeleton-avatar hidden"></div>
+                        <!-- Imagen real -->
+                        <img id="profile-img" src="" alt="Foto de perfil" class="hidden">
+                        <!-- Avatar / Emoji por defecto -->
+                        <div id="avatar-fallback" class="avatar-fallback hidden"></div>
+                    </div>
+                    <div class="profile-titles">
+                        <h2 id="r-nombre" class="name-text"></h2>
+                        <span id="r-cargo" class="badge"></span>
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Cédula</span>
+                        <span id="r-cedula" class="value"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Edad</span>
+                        <span id="r-edad" class="value"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Profesión</span>
+                        <span id="r-profesion" class="value"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Centro de Salud</span>
+                        <span id="r-centro" class="value"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Servicio / Dpto</span>
+                        <span id="r-servicio" class="value"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Condición</span>
+                        <span id="r-estado" class="value"></span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
