@@ -467,3 +467,32 @@ body {
     from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
+/* Caja de Certificación */
+.certificate-box {
+    margin-top: 24px;
+    padding: 16px;
+    background: rgba(167, 243, 208, 0.3); /* Verde claro transparente */
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.cert-icon {
+    color: #059669; /* Verde esmeralda */
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.cert-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #065f46;
+}
+
+.cert-text strong {
+    font-weight: 700;
+}
+

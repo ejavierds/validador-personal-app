@@ -66,14 +66,34 @@ function renderData(data) {
     
     document.getElementById('r-edad').textContent = data['EDAD'] ? `${data['EDAD']} años` : 'N/A';
     document.getElementById('r-profesion').textContent = formatValue(data['PROFESION']);
-    document.getElementById('r-centro').textContent = formatValue(data['CENTRO DE SALUD']);
+    document.getElementById('r-estado').textContent = formatValue(data['ESTADO']);
     
-    // Combinar departamento / servicio si aplica
+    const centroSalud = formatValue(data['CENTRO DE SALUD']);
+    document.getElementById('r-centro').textContent = centroSalud;
+    
+    // Mostrar servicio; si es N/A usar dpto
     const dpto = formatValue(data['DEPARTAMENTO']);
     const servicio = formatValue(data['SERVICIO']);
     document.getElementById('r-servicio').textContent = (servicio !== 'N/A') ? servicio : dpto;
     
-    document.getElementById('r-estado').textContent = formatValue(data['ESTADO']);
+    document.getElementById('r-responsabilidad').textContent = formatValue(data['RESPONSABILIDAD']);
+    
+    // Formatear Fecha de Ingreso
+    let fechaIngreso = formatValue(data['FECHA DE INGRESO AL CENTRO DE SALUD']);
+    if (fechaIngreso !== 'N/A' && fechaIngreso.includes('T')) {
+        fechaIngreso = new Date(fechaIngreso).toLocaleDateString('es-ES');
+    }
+    document.getElementById('r-ingreso').textContent = fechaIngreso;
+    
+    document.getElementById('r-telefono').textContent = formatValue(data['TELEFONO']);
+    document.getElementById('r-discapacidad').textContent = formatValue(data['¿CON ALGUNA DISCAPACIDAD?']);
+
+    // Certificado Institucional Dinámico
+    const nombres = formatValue(data['APELLIDOS Y NOMBRES']);
+    const cedula = `${nacionalidad}-${formatValue(data['CEDULA'])}`;
+    const cargo = formatValue(data['CARGO NOMINAL']);
+    
+    document.getElementById('r-certificado').innerHTML = `La <strong>Autoridad de Salud del Municipio Jiménez</strong> y la <strong>Dirección de ${centroSalud}</strong> certifican que el(la) ciudadano(a) <strong>${nombres}</strong>, titular de la cédula de identidad <strong>${cedula}</strong>, labora activamente en nuestra institución como <strong>${cargo}</strong>.`;
 
     // 2. Lógica de Imagen y Avatar Fallback
     const profileImg = document.getElementById('profile-img');
