@@ -496,3 +496,10 @@ body {
     font-weight: 700;
 }
 
+
+.cert-timestamp {
+    font-size: 0.75rem;
+    color: #047857;
+    margin-top: 6px;
+    font-style: italic;
+}

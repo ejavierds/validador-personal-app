@@ -92,9 +92,17 @@ function renderData(data) {
     const nombres = formatValue(data['APELLIDOS Y NOMBRES']);
     const cedula = `${nacionalidad}-${formatValue(data['CEDULA'])}`;
     const cargo = formatValue(data['CARGO NOMINAL']);
+    const municipio = formatValue(data['MUNICIPIO']);
     
-    document.getElementById('r-certificado').innerHTML = `La <strong>Autoridad de Salud del Municipio Jiménez</strong> y la <strong>Dirección de ${centroSalud}</strong> certifican que el(la) ciudadano(a) <strong>${nombres}</strong>, titular de la cédula de identidad <strong>${cedula}</strong>, labora activamente en nuestra institución como <strong>${cargo}</strong>.`;
+    // Si el municipio existe en la base de datos, lo mostramos, de lo contrario lo dejamos genérico
+    const textoMunicipio = (municipio !== 'N/A') ? `del Municipio ${municipio}` : `correspondiente`;
+    
+    document.getElementById('r-certificado').innerHTML = `La <strong>Autoridad de Salud ${textoMunicipio}</strong> y la <strong>Dirección de ${centroSalud}</strong> certifican que el(la) ciudadano(a) <strong>${nombres}</strong>, titular de la cédula de identidad <strong>${cedula}</strong>, labora activamente en nuestra institución como <strong>${cargo}</strong>.`;
 
+    // Sello de tiempo (Fecha y hora de consulta)
+    const fechaActual = new Date();
+    const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+    document.getElementById('r-fecha-consulta').textContent = `Consulta realizada el ${fechaActual.toLocaleDateString('es-ES', opcionesFecha)}`;
     // 2. Lógica de Imagen y Avatar Fallback
     const profileImg = document.getElementById('profile-img');
     const avatarFallback = document.getElementById('avatar-fallback');

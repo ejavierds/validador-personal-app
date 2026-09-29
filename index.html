@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Personal - Municipio Jiménez</title>
+    <title>Sistema de Verificación de Personal</title>
+    <!-- Favicon de Carnet/ID -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪪</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +21,7 @@
     <div class="container">
         <!-- Banner Superior -->
         <header class="header-card">
-            <img src="banner_salud_lara.png" alt="Banner Institucional Municipio Jiménez" class="banner-img">
+            <img src="banner_salud_lara.png" alt="Banner Institucional" class="banner-img">
         </header>
 
         <!-- Panel Principal -->
@@ -105,9 +107,12 @@
                 <!-- Certificación Institucional -->
                 <div class="certificate-box">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cert-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                    <p id="r-certificado" class="cert-text">
-                        La <strong>Autoridad de Salud del Municipio Jiménez</strong> y la <strong>Dirección</strong> certifican que el(la) trabajador(a) labora activamente en nuestra institución.
-                    </p>
+                    <div>
+                        <p id="r-certificado" class="cert-text">
+                            La <strong>Autoridad de Salud</strong> y la <strong>Dirección</strong> certifican que el(la) trabajador(a) labora activamente en nuestra institución.
+                        </p>
+                        <p id="r-fecha-consulta" class="cert-timestamp"></p>
+                    </div>
                 </div>
             </div>
         </main>
@@ -130,8 +135,8 @@
             <span class="close-btn" onclick="closeModalDirect('terms-modal')">&times;</span>
             <h2>Términos de Uso</h2>
             <div class="modal-body">
-                <p>Bienvenido al Sistema de Validación de Personal del Municipio Jiménez.</p>
-                <p>1. <strong>Uso del Sistema:</strong> Este sistema es de uso exclusivo para la verificación de identidad del personal adscrito al Municipio Jiménez y sus dependencias de salud.</p>
+                <p>Bienvenido al Sistema de Validación de Personal de Salud.</p>
+                <p>1. <strong>Uso del Sistema:</strong> Este sistema es de uso exclusivo para la verificación de identidad del personal adscrito a la Autoridad de Salud y sus dependencias.</p>
                 <p>2. <strong>Veracidad:</strong> La información arrojada por este sistema es de carácter informativo e institucional, respaldada por la base de datos oficial de recursos humanos.</p>
                 <p>3. <strong>Restricciones:</strong> Queda estrictamente prohibido el uso de este sistema para fines comerciales, extracción masiva de datos o cualquier actividad ilícita.</p>
             </div>
@@ -144,7 +149,7 @@
             <span class="close-btn" onclick="closeModalDirect('privacy-modal')">&times;</span>
             <h2>Política de Privacidad</h2>
             <div class="modal-body">
-                <p>El Municipio Jiménez se compromete a proteger la privacidad del personal.</p>
+                <p>La institución se compromete a proteger la privacidad del personal.</p>
                 <p>1. <strong>Datos Personales:</strong> Los datos mostrados (nombres, cédula, cargo, edad, etc.) son estrictamente los necesarios para la validación de la relación laboral o institucional.</p>
                 <p>2. <strong>Seguridad:</strong> El sistema no almacena las búsquedas ni la información de los usuarios que realizan las consultas. Toda la información es transmitida de forma segura.</p>
                 <p>3. <strong>Consentimiento:</strong> Al utilizar esta plataforma, usted acepta el manejo de datos exclusivamente para fines de verificación de identidad institucional.</p>
